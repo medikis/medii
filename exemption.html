@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+    <div id="root">
+        <header
+            class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionFixed mui-fixed muirtl-14suvet"
+            style="--Paper-shadow: 0 4px 4px 0 rgba(24,90,178,0.09);">
+            <div class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular muirtl-dfh0nt" id="main-toolbar">
+                <div
+                    class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column MuiGrid-grid-xs-true muirtl-vom6a7">
+                    <div class="MuiGrid-root MuiGrid-item muirtl-1wxaqej"></div>
+                    <div class="MuiGrid-root MuiGrid-item muirtl-1wxaqej"></div>
+                </div>
+                <div class="MuiStack-root muirtl-fv2zs6"><button
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart MuiIconButton-sizeMedium muirtl-4fzkye"
+                        tabindex="0" type="button" id="menu-button" aria-label="menu"><img
+                            src="icons/menu-hamburger.svg" alt="icon" height="18"><span
+                            class="MuiTouchRipple-root muirtl-4mb1j7"></span></button>
+                    <div class="PrivateSwipeArea-root muirtl-a5dz9y" style="width: 20px;"></div>
+                    <div class="MuiStack-root muirtl-1ij2st4">
+                        <p class="MuiTypography-root MuiTypography-body1 muirtl-1dteiiv">פרטי הפטור</p><button
+                            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeEnd MuiIconButton-sizeMedium muirtl-1f8cgg1" onclick="window.location.href='exemptions-page.html'"
+                            tabindex="0" type="button" id="back-button"><img
+                                src="icons/navbar-back.svg" alt="icon"></button>
+                    </div>
+                </div>
+            </div>
+            <div id="navbar-tabs-portal"></div>
+        </header>
+        <div aria-hidden="true" id="blur-div" class="MuiBackdrop-root muirtl-1aod2c2"
+            style="opacity: 0; transition: opacity 195ms cubic-bezier(0.4, 0, 0.2, 1); visibility: hidden;"></div>
+
+
+
+
+        <div class="MuiBox-root muirtl-1jqm41y">
+            <div class="MuiStack-root muirtl-ctinhq">
+                <p class="MuiTypography-root MuiTypography-body1 muirtl-kt1yo5">יבצע במטבח פינוי והגשה בלבד</p>
+                <hr class="MuiDivider-root MuiDivider-fullWidth muirtl-1sw1xox">
+                <div class="MuiBox-root muirtl-ds1a7j"><img
+                        src="icons/referring-physician.svg" alt="icon">
+                    <p class="MuiTypography-root MuiTypography-body1 muirtl-ciifxx" id="caregiver-name">ניתן על ידי </p>
+                    <p class="MuiTypography-root MuiTypography-body1 muirtl-10opd35">סמיר דרויש</p><img
+                        src="icons/date-icon.svg" alt="icon">
+                    <p class="MuiTypography-root MuiTypography-body1 muirtl-ciifxx" id="appointment-time">ניתן בתאריך
+                    </p>
+                    <p class="MuiTypography-root MuiTypography-body1 muirtl-10opd35">08.09.25</p><img
+                        src="icons/time-icon.svg" alt="icon">
+                    <p class="MuiTypography-root MuiTypography-body1 muirtl-ciifxx" id="expiration-date">תוקף </p>
+                    <p class="MuiTypography-root MuiTypography-body1 muirtl-10opd35">21.09.25</p>
+                </div>
+                <hr class="MuiDivider-root MuiDivider-fullWidth muirtl-1sw1xox">
+            </div>
+            <div class="MuiStack-root muirtl-wu34vq">
+                <p class="MuiTypography-root MuiTypography-body1 muirtl-6zpu0w" id="title-download">תדפיסים להורדה</p>
+                <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium muirtl-1bmf34b"
+                    tabindex="0" type="button" id="download-asmachta"><img
+                        src="icons/download-icon.svg" alt="icon" width="15">
+                    <a href="פטור-3548653.pdf" target="_blank" type="application/octet-stream" download="פטור-3548653.pdf" class="MuiTypography-root MuiTypography-body1 muirtl-1wisfbo">פטור</a>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div role="presentation" id="main-side-drawer"
+        class="MuiDrawer-root MuiDrawer-anchorLeft MuiDrawer-modal MuiModal-root muirtl-1hmojqi">
+        <div aria-hidden="true" class="MuiBackdrop-root MuiModal-backdrop muirtl-14dl35y"
+            style="opacity: 1; transition: 195ms cubic-bezier(0.4, 0, 0.2, 1);"></div>
+        <div tabindex="0" data-testid="sentinelStart"></div>
+        <div class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation16 MuiDrawer-paper MuiDrawer-paperAnchorLeft muirtl-yygwp7"
+            id="side-menu" tabindex="-1"
+            style="--Paper-shadow: 0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12); transform: translate(0px, 0px); transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);">
+            <div class="MuiStack-root muirtl-pn7e9b">
+                <div class="MuiStack-root muirtl-dvxtzn"><button
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium muirtl-c8hsoy"
+                        tabindex="0" type="button" id="close-menu-button"><img
+                            src="icons/close.svg" alt="icon"></button><img
+                        src="icons/medical-logo.svg" alt="icon"><button
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium muirtl-r7y9g9" onclick="window.location.href='index.html'"
+                        tabindex="0" type="button" id="home-menu-button"><img
+                            src="icons/home.svg" alt="icon"></button></div>
+                <hr class="MuiDivider-root MuiDivider-fullWidth muirtl-1sw1xox">
+                <div class="MuiBox-root muirtl-0">
+                    <div class="MuiGrid-root MuiGrid-container muirtl-cpxc36">
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 muirtl-6taq3o"><button
+                                class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary muirtl-1qoi09o"
+                                tabindex="0" type="button" id="common-action-29"><span
+                                    class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                        src="icons/request.svg" alt="icon"></span>שליחת
+                                בקשה למרפאה</button></div>
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 muirtl-6taq3o"><button
+                                class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary muirtl-1qoi09o"
+                                tabindex="0" type="button" id="common-action-15"><span
+                                    class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                        src="icons/booking.svg" alt="icon"></span>זימון
+                                תור</button></div>
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 muirtl-6taq3o"><button
+                                class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary muirtl-1qoi09o"
+                                tabindex="0" type="button" id="common-action-23"><span
+                                    class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                        src="icons/emergency.svg" alt="icon"></span>פניה
+                                לרפואה דחופה</button></div>
+                    </div>
+                </div>
+                <hr class="MuiDivider-root MuiDivider-fullWidth muirtl-1sw1xox">
+                <div class="MuiStack-root muirtl-j7qwjs">
+                    <p class="MuiTypography-root MuiTypography-body1 muirtl-1a52aad">איך נוכל לעזור לך?</p>
+                    <div class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 muirtl-1b9v1ly">
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 muirtl-6taq3o"><button
+                                class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth muirtl-1b2hlq6"
+                                tabindex="0" type="button" id="menu-item-1"><span
+                                    class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                        src="icons/my-queues.svg"
+                                        alt="icon"></span>התורים שלי</button></div>
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 muirtl-6taq3o"><button
+                                class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth muirtl-1b2hlq6"
+                                tabindex="0" type="button" id="menu-item-2"><span
+                                    class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                        src="icons/test-results.svg"
+                                        alt="icon"></span>תוצאות בדיקות</button></div>
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 muirtl-6taq3o"><button
+                                class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth muirtl-1b2hlq6"
+                                tabindex="0" type="button" id="menu-item-3"><span
+                                    class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                        src="icons/prescriptions.svg"
+                                        alt="icon"></span>תרופות ומרשמים</button></div>
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 muirtl-6taq3o"><button
+                                class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth muirtl-1b2hlq6"
+                                tabindex="0" type="button" id="menu-item-4"><span
+                                    class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                        src="icons/references.svg"
+                                        alt="icon"></span>הפניות</button></div>
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 muirtl-6taq3o"><button
+                                class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth muirtl-1b2hlq6"
+                                tabindex="0" type="button" id="menu-item-5"><span
+                                    class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                        src="icons/discharge.svg"
+                                        alt="icon"></span>פטורים </button></div>
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 muirtl-6taq3o"><button
+                                class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth muirtl-1b2hlq6"
+                                tabindex="0" type="button" id="menu-item-6"><span
+                                    class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                        src="icons/sick-days.svg" alt="icon"></span>ימי
+                                מחלה</button></div>
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 muirtl-6taq3o"><button
+                                class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth muirtl-1b2hlq6"
+                                tabindex="0" type="button" id="menu-item-7"><span
+                                    class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                        src="icons/vaccine.svg"
+                                        alt="icon"></span>חיסונים</button></div>
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 muirtl-6taq3o"><button
+                                class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth muirtl-1b2hlq6"
+                                tabindex="0" type="button" id="menu-item-8"><span
+                                    class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                        src="icons/summary.svg" alt="icon"></span>סיכומי
+                                ביקור</button></div>
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 muirtl-6taq3o"><button
+                                class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth muirtl-1b2hlq6"
+                                tabindex="0" type="button" id="menu-item-12"><span
+                                    class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                        src="icons/medical-profile.svg"
+                                        alt="icon"></span>פרופיל רפואי</button></div>
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 muirtl-6taq3o"><button
+                                class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth muirtl-1b2hlq6"
+                                tabindex="0" type="button" id="menu-item-14"><span
+                                    class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                        src="icons/requests.svg" alt="icon"></span>הבקשות
+                                שלי</button></div>
+                    </div>
+                </div>
+                <hr class="MuiDivider-root MuiDivider-fullWidth muirtl-1sw1xox">
+                <div class="MuiStack-root muirtl-9k6x7o"><button
+                        class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary muirtl-1bn2r2d"
+                        tabindex="0" type="button" id="feedback-button"><span
+                            class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                src="icons/review.svg" alt="icon"></span>מה דעתך על
+                        MediTik? נשמח לפידבק</button><button
+                        class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary muirtl-1bn2r2d"
+                        tabindex="0" type="button" id="install-button"><span
+                            class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                src="icons/install.svg" alt="icon"></span>הורדה
+                        כאפליקציה</button><button
+                        class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary muirtl-1bn2r2d"
+                        tabindex="0" type="button" id="share-button"><span
+                            class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                src="icons/share.svg" alt="icon"></span>שיתוף עם
+                        חברים</button><button
+                        class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary muirtl-1bn2r2d"
+                        tabindex="0" type="button" id="logout-button"><span
+                            class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                src="icons/logout.svg" alt="icon"></span>התנתק</button>
+                </div>
+                <div class="MuiStack-root muirtl-11t1h4v">
+                    <hr class="MuiDivider-root MuiDivider-fullWidth muirtl-1sw1xox">
+                    <div class="MuiStack-root muirtl-csffzd">
+                        <div class="MuiStack-root muirtl-csffzd"><img
+                                src="icons/lotem-logo.svg" alt="icon" height="26"><img
+                                src="icons/shahar-logo.svg" alt="icon" height="26">
+                            <p class="MuiTypography-root MuiTypography-body1 muirtl-14bgq7w">פותח ע״י אגף
+                                התקשוב/לוטם/יחידת שחר</p>
+                        </div>
+                        <div class="MuiStack-root muirtl-csffzd"><img
+                                src="icons/menu-logo.svg" alt="icon" height="29">
+                            <p class="MuiTypography-root MuiTypography-body1 muirtl-14bgq7w">בשיתוף מחלקת מערכות מידע
+                                בחט״ל</p>
+                        </div>
+                    </div>
+                    <p class="MuiTypography-root MuiTypography-body1 muirtl-1r78j11">1.6.2.0</p>
+                </div>
+            </div>
+        </div>
+        <div tabindex="0" data-testid="sentinelEnd"></div>
+    </div>
+
+
+
+
+    <button class="plus-button-spec" id="plus-button" display="none"></button>
+    <p id="time-text-name" display="none"></p>
+</body>
+
+
+</html>

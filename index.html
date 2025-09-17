@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediTik</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="manifest" href="manifest.json">
+
+</head>
+
+<body>
+    <header class="navbar" style="--Paper-shadow: 0 4px 4px 0 rgba(24,90,178,0.09);">
+        <div class="div-navbar" id="main-toolbar">
+            <div class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column MuiGrid-grid-xs-true muirtl-vom6a7">
+                <div class="MuiGrid-root MuiGrid-item muirtl-1wxaqej"></div>
+                <div class="MuiGrid-root MuiGrid-item muirtl-1wxaqej"></div>
+            </div>
+            <div class="navbar-images">
+                <button class="MuiIconButton-colorInherit MuiIconButton-edgeStart muirtl-4fzkye" tabindex="0"
+                    type="button" id="menu-button" aria-label="menu">
+                    <img src="icons/menu-hamburger.svg" alt="icon" height="18">
+                    <span class="MuiTouchRipple-root muirtl-4mb1j7"></span>
+                </button>
+                <div class="PrivateSwipeArea-root muirtl-a5dz9y" style="width: 20px;"></div>
+                <div class="MuiStack-root muirtl-j7qwjs">
+                    <img src="icons/logo.svg" alt="icon" width="125" height="60">
+                </div>
+            </div>
+        </div>
+        <div id="navbar-tabs-portal"></div>
+    </header>
+    <div aria-hidden="true" id="blur-div" class="MuiBackdrop-root muirtl-1aod2c2"
+        style="opacity: 0; transition: opacity 195ms cubic-bezier(0.4, 0, 0.2, 1); visibility: hidden;"></div>
+    <div class="main-page-div-container">
+        <div role="presentation" id="speed-dial" class="MuiSpeedDial-root MuiSpeedDial-directionUp  muirtl-3grola">
+            <button id="plus-button"
+                class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeLarge MuiFab-primary MuiFab-root MuiFab-circular MuiFab-sizeLarge MuiFab-primary MuiSpeedDial-fab muirtl-1m4ekyw"
+                tabindex="0" type="button" aria-label="SpeedDial" aria-haspopup="true" aria-expanded="false"
+                aria-controls="SpeedDial-actions"
+                style="transform: none; transition: transform 225ms cubic-bezier(0.4, 0, 0.2, 1);">
+                <span class="btn-content"><span class="btn-text" id="plus-btn-text">פעולות מהירות</span><span
+                        class="MuiSpeedDialIcon-root muirtl-m9ecv3">
+                        <svg id="plus-text"
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSpeedDialIcon-icon muirtl-7j8jl"
+                            focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="AddIcon">
+                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+                        </svg></span></span><span class="MuiTouchRipple-root muirtl-4mb1j7"></span></button>
+            <div id="SpeedDial-actions" role="menu" aria-orientation="vertical"
+                class="MuiSpeedDial-actions MuiSpeedDial-actionsClosed muirtl-1amzfyf">
+                <button
+                    class="plus-button-spec MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiFab-default MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiFab-default MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed muirtl-lvxgbw"
+                    tabindex="-1" type="button" role="menuitem" style="transition-delay: 150ms;">
+                    <span style="margin-left: 10px;">פנייה למוקד מקול הלב</span>
+                    <img src="icons/whatsapp-actions.svg" alt="icon">
+                </button>
+                <button
+                    class="plus-button-spec MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiFab-default MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiFab-default MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed muirtl-lvxgbw"
+                    tabindex="-1" type="button" role="menuitem" style="transition-delay: 120ms;">
+                    <span style="margin-left: 10px;">פנייה לברה"ן</span>
+                    <img src="icons/mental-health-action.svg" alt="icon">
+                </button>
+                <button
+                    class="plus-button-spec MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiFab-default MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiFab-default MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed muirtl-lvxgbw"
+                    tabindex="-1" type="button" role="menuitem" style="transition-delay: 90ms;">
+                    <span style="margin-left: 10px;">בקשה לקבלת מרשם</span>
+                    <img src="icons/prescription-grey.svg" alt="icon">
+                </button>
+                <button
+                    class="plus-button-spec MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiFab-default MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiFab-default MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed muirtl-lvxgbw"
+                    tabindex="-1" type="button" role="menuitem" style="transition-delay: 60ms;">
+                    <span style="margin-left: 10px;">בקשת הפניה חדשה</span>
+                    <img src="icons/new-referral-grey.svg" alt="icon">
+                </button>
+                <button
+                    class="plus-button-spec MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiFab-default MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiFab-default MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed muirtl-lvxgbw"
+                    tabindex="-1" type="button" role="menuitem" style="transition-delay: 30ms;">
+                    <span style="margin-left: 10px;">זימון תור</span>
+                    <img src="icons/make-appointment-grey.svg" alt="icon">
+                </button>
+            </div>
+        </div>
+
+
+
+        <div class="out-name-container-div">
+            <div class="name-container-div">
+                <img src="icons/avatar.svg" alt="icon"
+                    style="display: block; border-bottom: 2px solid rgb(79, 79, 79);">
+                <div class="name-text-div">
+                    <p class="name-text" id="time-text-name">בוקר טוב לירז</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="main-div-white">
+            <div class="white-div-obj"
+                style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);">
+                <div id="user-requests-widget-hp-header" class="inner-white-obj-div">
+                    <div class="card-header-icon white-icon-div">
+                        <div class="arrow-card-icon">
+                            <img src="icons/middle-right.svg"
+                                style="position: absolute; width: 100%; height: 100%; object-fit: cover; border-radius: 50%; pointer-events: none;">
+                            <img src="icons/requests.svg" alt="icon">
+                        </div>
+                    </div>
+                    <div class="card-header-content">
+                        <span class="card-title card-header-title">הבקשות שלי</span>
+                    </div>
+                    <div class="card-header-arrow">
+                        <button class="card-arrow" tabindex="0" type="button">
+                            <img src="icons/dark-arrow-left.svg" alt="icon">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="MuiCardContent-root muirtl-k51ya6">
+                    <div class="muirtl-1iii0o0" style="width: 100%; height: 179.297px;">
+                        <div class="MuiStack-root muirtl-1p1gszq">
+                            <div class="muirtl-1ltgg6a">
+                                <div class="muirtl-1svd1hc" style="transform: translateY(0px);" data-index="0">
+                                    <div class="     generic-card muirtl-1txugud"
+                                        style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);">
+                                        <div class="MuiCardContent-root muirtl-jgd9ug">
+                                            <div class="MuiGrid-root MuiGrid-container muirtl-1ww8y44">
+                                                <p class="card-title MuiTypography-body1 muirtl-7zym04"
+                                                    id="user-requests-widget-0-card-title">הפניה חדשה</p>
+                                            </div>
+                                            <div class="muirtl-1f7w5n4"></div>
+                                            <div class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorInfo MuiChip-filledInfo muirtl-kshvos"
+                                                id="user-requests-widget-0-card-dates">
+                                                <span class="MuiChip-label MuiChip-labelSmall muirtl-4y436t">סטטוס הבקשה
+                                                    13:00 17.09.25 </span>
+                                            </div>
+                                        </div>
+                                        <hr class="MuiDivider-root MuiDivider-fullWidth muirtl-1sw1xox">
+                                        <div class="MuiStack-root muirtl-1jyd9ei">
+                                            <div class="muirtl-31l7gp">
+                                                <p class="card-title MuiTypography-body1 muirtl-apnovb"
+                                                    id="user-requests-widget-0-card-indication">נשלחה</p>
+                                            </div>
+                                            <div class="muirtl-31l7gp">
+                                                <div class="muirtl-0"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="white-div-obj"
+                style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);">
+                <div id="future-appointments-widget-hp-header" class=" inner-white-obj-div">
+                    <div class="card-header-icon white-icon-div">
+                        <div class="arrow-card-icon">
+                            <img src="icons/top-left.svg"
+                                style="position: absolute; width: 100%; height: 100%; object-fit: cover; border-radius: 50%; pointer-events: none;">
+                            <img src="icons/my-queues.svg" alt="icon">
+                        </div>
+                    </div>
+                    <div class="card-header-content">
+                        <span class="card-title card-header-title">התורים שלי</span>
+                    </div>
+                    <div class="card-header-arrow">
+                        <button class="card-arrow" tabindex="0" type="button">
+                            <img src="icons/dark-arrow-left.svg" alt="icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="MuiCardContent-root muirtl-k51ya6">
+                    <div class="generic-card muirtl-1txugud"
+                        style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);">
+                        <div class="MuiCardContent-root muirtl-jgd9ug">
+                            <div class="MuiGrid-root MuiGrid-container muirtl-tcxst"></div>
+                            <div class="muirtl-1f7w5n4"></div>
+                            <div class="muirtl-k008qs">
+                                <h6 class="card-title MuiTypography-subtitle2 muirtl-ifvk9x"
+                                    id="future-appointments-widget-empty-state-extra-info">תורים עתידיים שיקבעו יופיעו
+                                    כאן</h6>
+                            </div>
+                        </div>
+                        <hr class="MuiDivider-root MuiDivider-fullWidth muirtl-1sw1xox">
+                        <div class="MuiStack-root muirtl-1jyd9ei">
+                            <div class="muirtl-31l7gp">
+                                <div class="muirtl-0"></div>
+                            </div>
+                            <div class="muirtl-31l7gp">
+                                <div class="muirtl-epvm6">
+                                    <span>
+                                        <div class="muirtl-ffmerx">
+                                            <img src="icons/return-referral.svg"
+                                                alt="icon">
+                                            <a class="card-title MuiTypography-subtitle2 MuiLink-root MuiLink-underlineNone muirtl-1ee6vd4"
+                                                target="_blank" id="emptyState-link-link">לזימון תור</a>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="white-div-obj"
+                style="margin-top: 12px; --Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);">
+                <div id="referrals-widget-hp-header" class=" inner-white-obj-div">
+                    <div class="card-header-icon white-icon-div">
+                        <div class="arrow-card-icon"><img src="icons/bottom-right.svg" alt=""
+                                style="position: absolute; width: 100%; height: 100%; object-fit: cover; border-radius: 50%; pointer-events: none;"><img
+                                src="icons/references.svg" alt="icon"></div>
+                    </div>
+                    <div class="card-header-content"><span class="card-title card-header-title">הפניות
+                            (1)</span></div>
+                    <div class="card-header-arrow"><button class="card-arrow" tabindex="0" type="button"><img
+                                src="icons/dark-arrow-left.svg" alt="icon"></button>
+                    </div>
+                </div>
+                <div class="MuiCardContent-root muirtl-k51ya6">
+                    <div class="muirtl-1iii0o0" style="width: 100%; height: 203.188px;">
+                        <div class="MuiStack-root muirtl-1p1gszq">
+                            <div class="muirtl-1p2e7fs">
+                                <div class="muirtl-1svd1hc" style="transform: translateY(0px);" data-index="0">
+                                    <div class="     generic-card muirtl-1txugud"
+                                        style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);">
+                                        <div class="MuiCardContent-root muirtl-jgd9ug">
+                                            <div class="MuiGrid-root MuiGrid-container muirtl-1ww8y44">
+                                                <p class="card-title MuiTypography-body1 muirtl-7zym04"
+                                                    id="referrals-widget-0-card-title">בדיקת רופא עור ומין במרפאה</p>
+                                            </div>
+                                            <div class="muirtl-1f7w5n4"></div>
+                                            <div class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorInfo MuiChip-filledInfo muirtl-kshvos"
+                                                id="referrals-widget-0-card-dates"><span
+                                                    class="MuiChip-label MuiChip-labelSmall muirtl-4y436t">התוקף מ-
+                                                    16.06.25 עד 14.10.25</span></div>
+                                            <div class="muirtl-k008qs">
+                                                <h6 class="card-title MuiTypography-subtitle2 muirtl-ifvk9x"
+                                                    id="referrals-widget-0-extra-info">איכילוב (סוראסקי)/מומחים,עור-כללי
+                                                </h6>
+                                            </div>
+                                        </div>
+                                        <hr class="MuiDivider-root MuiDivider-fullWidth muirtl-1sw1xox">
+                                        <div class="MuiStack-root muirtl-1jyd9ei">
+                                            <div class="muirtl-31l7gp">
+                                                <div class="muirtl-0"></div>
+                                            </div>
+                                            <div class="muirtl-31l7gp">
+                                                <div class="muirtl-epvm6"><span>
+                                                        <div class="muirtl-ffmerx"><img
+                                                                src="icons/return-referral.svg"
+                                                                alt="icon"><button
+                                                                class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary muirtl-dz0n0t"
+                                                                tabindex="0" type="button"
+                                                                id="5775062-link-to-fulfill-referral">
+                                                                <p
+                                                                    class="card-title MuiTypography-body1 muirtl-1kx3o4u">
+                                                                    החזר הפניה</p>
+                                                            </button></div>
+                                                    </span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="white-div-obj"
+                style="margin-top: 12px; --Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);">
+                <div id="medicines-widget-hp-header" class=" inner-white-obj-div">
+                    <div class="card-header-icon white-icon-div">
+                        <div class="arrow-card-icon"><img src="icons/bottom-left.svg" alt=""
+                                style="position: absolute; width: 100%; height: 100%; object-fit: cover; border-radius: 50%; pointer-events: none;"><img
+                                src="icons/prescriptions.svg" alt="icon"></div>
+                    </div>
+                    <div class="card-header-content"><span class="card-title card-header-title">תרופות
+                            ומרשמים</span></div>
+                    <div class="card-header-arrow"><button class="card-arrow" tabindex="0" type="button"><img
+                                src="icons/dark-arrow-left.svg" alt="icon"></button>
+                    </div>
+                </div>
+                <div class="MuiCardContent-root muirtl-k51ya6">
+                    <div class="     generic-card muirtl-1txugud"
+                        style=" --Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);">
+                        <div class="MuiCardContent-root muirtl-jgd9ug">
+                            <div class="MuiGrid-root MuiGrid-container muirtl-tcxst"></div>
+                            <div class="muirtl-1f7w5n4"></div>
+                            <div class="muirtl-k008qs">
+                                <h6 class="card-title MuiTypography-subtitle2 muirtl-ifvk9x"
+                                    id="medicines-widget-empty-state-extra-info">מרשמים שיתקבלו יופיעו כאן</h6>
+                            </div>
+                        </div>
+                        <hr class="MuiDivider-root MuiDivider-fullWidth muirtl-1sw1xox">
+                        <div class="MuiStack-root muirtl-1jyd9ei">
+                            <div class="muirtl-31l7gp">
+                                <div class="muirtl-0"></div>
+                            </div>
+                            <div class="muirtl-31l7gp">
+                                <div class="muirtl-epvm6"><span>
+                                        <div class="muirtl-ffmerx"><img
+                                                src="icons/return-referral.svg"
+                                                alt="icon"><a
+                                                class="card-title MuiTypography-subtitle2 MuiLink-root MuiLink-underlineNone muirtl-1ee6vd4"
+                                                target="_blank" href="/prescription-request"
+                                                id="emptyState-link-link">לבקשת מרשם</a></div>
+                                    </span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="     white-div-obj"
+                style="margin-top: 12px; --Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);">
+                <div id="exemptions-home-page-hp-header" class=" inner-white-obj-div" onclick="window.location.href='exemptions-page.html'">
+                    <div class="card-header-icon white-icon-div">
+                        <div class="arrow-card-icon"><img src="icons/top-right.svg" alt=""
+                                style="position: absolute; width: 100%; height: 100%; object-fit: cover; border-radius: 50%; pointer-events: none;"><img
+                                src="icons/discharge.svg" alt="icon"></div>
+                    </div>
+                    <div class="card-header-content"><span class="card-title card-header-title">פטורים
+                            (1) </span></div>
+                    <div class="card-header-arrow"><button class="card-arrow" tabindex="0" type="button"><img
+                                src="icons/dark-arrow-left.svg" alt="icon"></button>
+                    </div>
+                </div>
+                <div class="MuiCardContent-root muirtl-k51ya6">
+                    <div class="   generic-card muirtl-12au0p6"
+                        style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);">
+                        <div class="MuiCardContent-root muirtl-jgd9ug" onclick="window.location.href='exemption.html'">
+                            <div class="MuiGrid-root MuiGrid-container muirtl-1ww8y44">
+                                <p class="MuiTypography-root MuiTypography-body1 muirtl-7zym04" id="invalid-exemptions-0-card-title">יבצע במטבח פינוי והגשה בלבד</p>
+                            </div>
+                            <p class="MuiTypography-root MuiTypography-body1 muirtl-nn6o7w"
+                                id="invalid-exemptions-0-card-given-by">סמיר דרויש</p>
+
+                            <div class="muirtl-1f7w5n4"></div>
+                            <div class="muirtl-k008qs">
+                                <!-- <h6 class="card-title MuiTypography-subtitle2 muirtl-ifvk9x"
+                                    id="exemptions-home-page-empty-state-extra-info">פטורים שירשמו עבורך יופיעו כאן</h6> -->
+
+                                <div class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorError MuiChip-filledError muirtl-122btlw"
+                                                        id="valid-exemptions-0-card-dates"><span
+                                                            class="MuiChip-label MuiChip-labelSmall muirtl-4y436t">התוקף
+                                                            מסתיים בעוד 3 ימים</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="MuiBox-root muirtl-1c85l8p">
+            <div class="MuiBox-root muirtl-64zht2">
+                <p class="MuiTypography-root MuiTypography-body1 muirtl-v0cuf7">משרתים יקרים</p>
+                <p class="MuiTypography-root MuiTypography-body1 muirtl-e2qyo8">לכל שאלה ותקלה ניתן לפנות בטלפון
+                    24/7 למוקד חיל הרפואה (מוקד מקול הלב) במספר:</p><a href="tel:*6690" class="muirtl-1sed86g"><img
+                        src="icons/red-phone.svg" alt="icon" width="14" height="14">
+                    <p class="MuiTypography-root MuiTypography-body1 muirtl-1r8wwtm">*6690</p>
+                </a>
+            </div>
+            <div class="MuiBox-root muirtl-1w882eb">
+                <div class="MuiStack-root muirtl-1o0tk60">
+                    <div class="MuiBox-root muirtl-1szb2xj"><img src="icons/version.svg"
+                            alt="icon" width="15" height="15">
+                        <p class="MuiTypography-root MuiTypography-body1 muirtl-1cbgzk8"
+                            style="text-decoration: underline;">זמן עדכון אחרון</p>
+                    </div>
+                    <!-- <p class="MuiTypography-root MuiTypography-body1 muirtl-1cbgzk8">עודכן ב-06.09.25 | 11:00</p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div role="presentation" id="main-side-drawer"
+        class="MuiDrawer-root MuiDrawer-anchorLeft MuiDrawer-modal MuiModal-root muirtl-1hmojqi">
+        <div aria-hidden="true" class="MuiBackdrop-root MuiModal-backdrop muirtl-14dl35y"
+            style="opacity: 1; transition: 195ms cubic-bezier(0.4, 0, 0.2, 1);"></div>
+        <div tabindex="0" data-testid="sentinelStart"></div>
+        <div class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation16 MuiDrawer-paper MuiDrawer-paperAnchorLeft muirtl-yygwp7"
+            id="side-menu" tabindex="-1"
+            style="--Paper-shadow: 0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12); transform: translate(0px, 0px); transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);">
+            <div class="MuiStack-root muirtl-pn7e9b">
+                <div class="MuiStack-root muirtl-dvxtzn"><button
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium muirtl-c8hsoy"
+                        tabindex="0" type="button" id="close-menu-button"><img
+                            src="icons/close.svg" alt="icon"></button><img
+                        src="icons/medical-logo.svg" alt="icon"><button
+                        class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium muirtl-r7y9g9" onclick="window.location.href='index.html'"
+                        tabindex="0" type="button" id="home-menu-button"><img
+                            src="icons/home.svg" alt="icon"></button></div>
+                <hr class="MuiDivider-root MuiDivider-fullWidth muirtl-1sw1xox">
+                <div class="MuiBox-root muirtl-0">
+                    <div class="MuiGrid-root MuiGrid-container muirtl-cpxc36">
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 muirtl-6taq3o"><button
+                                class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary muirtl-1qoi09o"
+                                tabindex="0" type="button" id="common-action-29"><span
+                                    class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                        src="icons/request.svg" alt="icon"></span>שליחת
+                                בקשה למרפאה</button></div>
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 muirtl-6taq3o"><button
+                                class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary muirtl-1qoi09o"
+                                tabindex="0" type="button" id="common-action-15"><span
+                                    class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                        src="icons/booking.svg" alt="icon"></span>זימון
+                                תור</button></div>
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 muirtl-6taq3o"><button
+                                class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary muirtl-1qoi09o"
+                                tabindex="0" type="button" id="common-action-23"><span
+                                    class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                        src="icons/emergency.svg" alt="icon"></span>פניה
+                                לרפואה דחופה</button></div>
+                    </div>
+                </div>
+                <hr class="MuiDivider-root MuiDivider-fullWidth muirtl-1sw1xox">
+                <div class="MuiStack-root muirtl-j7qwjs">
+                    <p class="MuiTypography-root MuiTypography-body1 muirtl-1a52aad">איך נוכל לעזור לך?</p>
+                    <div class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 muirtl-1b9v1ly">
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 muirtl-6taq3o"><button
+                                class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth muirtl-1b2hlq6"
+                                tabindex="0" type="button" id="menu-item-1"><span
+                                    class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                        src="icons/my-queues.svg"
+                                        alt="icon"></span>התורים שלי</button></div>
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 muirtl-6taq3o"><button
+                                class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth muirtl-1b2hlq6"
+                                tabindex="0" type="button" id="menu-item-2"><span
+                                    class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                        src="icons/test-results.svg"
+                                        alt="icon"></span>תוצאות בדיקות</button></div>
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 muirtl-6taq3o"><button
+                                class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth muirtl-1b2hlq6"
+                                tabindex="0" type="button" id="menu-item-3"><span
+                                    class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                        src="icons/prescriptions.svg"
+                                        alt="icon"></span>תרופות ומרשמים</button></div>
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 muirtl-6taq3o"><button
+                                class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth muirtl-1b2hlq6"
+                                tabindex="0" type="button" id="menu-item-4"><span
+                                    class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                        src="icons/references.svg"
+                                        alt="icon"></span>הפניות</button></div>
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 muirtl-6taq3o"><button
+                                class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth muirtl-1b2hlq6"
+                                tabindex="0" type="button" id="menu-item-5"><span
+                                    class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                        src="icons/discharge.svg"
+                                        alt="icon"></span>פטורים </button></div>
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 muirtl-6taq3o"><button
+                                class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth muirtl-1b2hlq6"
+                                tabindex="0" type="button" id="menu-item-6"><span
+                                    class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                        src="icons/sick-days.svg" alt="icon"></span>ימי
+                                מחלה</button></div>
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 muirtl-6taq3o"><button
+                                class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth muirtl-1b2hlq6"
+                                tabindex="0" type="button" id="menu-item-7"><span
+                                    class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                        src="icons/vaccine.svg"
+                                        alt="icon"></span>חיסונים</button></div>
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 muirtl-6taq3o"><button
+                                class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth muirtl-1b2hlq6"
+                                tabindex="0" type="button" id="menu-item-8"><span
+                                    class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                        src="icons/summary.svg" alt="icon"></span>סיכומי
+                                ביקור</button></div>
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 muirtl-6taq3o"><button
+                                class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth muirtl-1b2hlq6"
+                                tabindex="0" type="button" id="menu-item-12"><span
+                                    class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                        src="icons/medical-profile.svg"
+                                        alt="icon"></span>פרופיל רפואי</button></div>
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4 muirtl-6taq3o"><button
+                                class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-fullWidth muirtl-1b2hlq6"
+                                tabindex="0" type="button" id="menu-item-14"><span
+                                    class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                        src="icons/requests.svg" alt="icon"></span>הבקשות
+                                שלי</button></div>
+                    </div>
+                </div>
+                <hr class="MuiDivider-root MuiDivider-fullWidth muirtl-1sw1xox">
+                <div class="MuiStack-root muirtl-9k6x7o"><button
+                        class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary muirtl-1bn2r2d"
+                        tabindex="0" type="button" id="feedback-button"><span
+                            class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                src="icons/review.svg" alt="icon"></span>מה דעתך על
+                        MediTik? נשמח לפידבק</button><button
+                        class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary muirtl-1bn2r2d"
+                        tabindex="0" type="button" id="install-button"><span
+                            class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                src="icons/install.svg" alt="icon"></span>הורדה
+                        כאפליקציה</button><button
+                        class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary muirtl-1bn2r2d"
+                        tabindex="0" type="button" id="share-button"><span
+                            class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                src="icons/share.svg" alt="icon"></span>שיתוף עם
+                        חברים</button><button
+                        class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary muirtl-1bn2r2d"
+                        tabindex="0" type="button" id="logout-button"><span
+                            class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium muirtl-cveorv"><img
+                                src="icons/logout.svg" alt="icon"></span>התנתק</button>
+                </div>
+                <div class="MuiStack-root muirtl-11t1h4v">
+                    <hr class="MuiDivider-root MuiDivider-fullWidth muirtl-1sw1xox">
+                    <div class="MuiStack-root muirtl-csffzd">
+                        <div class="MuiStack-root muirtl-csffzd"><img
+                                src="icons/lotem-logo.svg" alt="icon" height="26"><img
+                                src="icons/shahar-logo.svg" alt="icon" height="26">
+                            <p class="MuiTypography-root MuiTypography-body1 muirtl-14bgq7w">פותח ע״י אגף
+                                התקשוב/לוטם/יחידת שחר</p>
+                        </div>
+                        <div class="MuiStack-root muirtl-csffzd"><img
+                                src="icons/menu-logo.svg" alt="icon" height="29">
+                            <p class="MuiTypography-root MuiTypography-body1 muirtl-14bgq7w">בשיתוף מחלקת מערכות מידע
+                                בחט״ל</p>
+                        </div>
+                    </div>
+                    <p class="MuiTypography-root MuiTypography-body1 muirtl-1r78j11">1.6.2.0</p>
+                </div>
+            </div>
+        </div>
+        <div tabindex="0" data-testid="sentinelEnd"></div>
+    </div>
+</body>
+
+
+</html>
+
+

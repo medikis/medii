@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap");
+
+body {
+    background-attachment: scroll;
+    background-color: #f6f7fa;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0
+}
+
+#root,
+body,
+html {
+    height: 100%
+}
+
+#root {
+    display: flex;
+    flex-direction: column
+}
+
+* {
+    box-sizing: border-box
+}
+
+@keyframes credits {
+    0% {
+        top: 100%
+    }
+
+    to {
+        top: -500%
+    }
+}
+
+.hide-scroll ::-webkit-scrollbar {
+    width: revert
+}
+
+@media (pointer:coarse),
+(pointer:none) {
+    .hide-scroll ::-webkit-scrollbar {
+        width: 0
+    }
+}
