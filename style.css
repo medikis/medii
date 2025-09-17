@@ -3004,7 +3004,7 @@ hr {
     border-radius: 5px;
 }
 
-/* .muirtl-1wbw82o::before {
+.muirtl-1wbw82o::before {
     content: "";
     position: absolute;
     background-image: url(icons/new-badge.svg);
@@ -3015,7 +3015,7 @@ hr {
     flex-shrink: 0;
     left: -19px;
     top: -6px;
-} */
+}
 
 .muirtl-122btlw.MuiChip-colorError {
     color: rgb(255, 0, 60);
@@ -3053,5 +3053,9 @@ hr {
     padding: 0px;
     white-space: pre-wrap;
     border-radius: 5px;
+}
 
+.info-text {
+    position: relative;
+    bottom: 20px;
 }
