@@ -77,11 +77,11 @@ const getTimeOfDay = () => {
     let now = new Date();
     let hours = now.getHours();
     if (hours > 5 && hours < 12) {
-        document.getElementById("time-text-name").innerText = "בוקר טוב לירז";
+        document.getElementById("time-text-name").innerText = "בוקר טוב פריאל";
     } else if (hours > 12 && hours < 17) {
-        document.getElementById("time-text-name").innerText = "צהריים טובים לירז";
+        document.getElementById("time-text-name").innerText = "צהריים טובים פריאל";
     } else {
-        document.getElementById("time-text-name").innerText = "ערב טוב לירז";
+        document.getElementById("time-text-name").innerText = "ערב טוב פריאל";
     };
     if (currentPage === "exemptions-page.html") {
         document.getElementById("time-text-name").style.display="none";
@@ -128,6 +128,7 @@ const backFromLastExem = () => {
     document.getElementById("page-white-arrow").style.right = "156px";
     document.getElementById("current-exemptions-div").style.transform = "translate(100%, 0px)";
 }
+
 
 
 
